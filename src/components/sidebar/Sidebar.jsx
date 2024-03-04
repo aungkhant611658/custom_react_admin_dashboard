@@ -23,7 +23,7 @@ const Sidebar = ({
 }) => {
   const drawer = (
     <div>
-      <Toolbar />
+      <Toolbar>Hello</Toolbar>
       <Divider />
       <List>
         {sidebarMenu.map((item) => (

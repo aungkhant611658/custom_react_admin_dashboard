@@ -16,6 +16,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 
+import "./Navbar.scss";
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -157,6 +159,7 @@ export default function Navbar({ handleDrawer, drawerWidth }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
+        className="navbar"
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
