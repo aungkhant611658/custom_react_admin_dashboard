@@ -1,96 +1,95 @@
-import React from "react";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import MailIcon from "@mui/icons-material/Mail";
+import Toolbar from "@mui/material/Toolbar";
 
-import "./Sidebar.scss";
-
-import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
-import PersonOutlineRoundedIcon from "@mui/icons-material/PersonOutlineRounded";
-import StoreRoundedIcon from "@mui/icons-material/StoreRounded";
-import PaymentRoundedIcon from "@mui/icons-material/PaymentRounded";
-import LocalShippingRoundedIcon from "@mui/icons-material/LocalShippingRounded";
-import InsertChartRoundedIcon from "@mui/icons-material/InsertChartRounded";
-import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
-import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
-import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
-import SettingsApplicationsSharpIcon from "@mui/icons-material/SettingsApplicationsSharp";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
-
-const Sidebar = () => {
-  return (
-    <div className="sidebar">
-      <div className="top">
-        <span className="logo">Admin</span>
-      </div>
-
-      <hr />
-
-      <div className="center">
-        <ul>
-          <p className="title">MAIN</p>
-          <li>
-            <DashboardRoundedIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
-
-          <p className="title">LISTS</p>
-          <li>
-            <PersonOutlineRoundedIcon className="icon" />
-            <span>Users</span>
-          </li>
-          <li>
-            <StoreRoundedIcon className="icon" />
-            <span>Products</span>
-          </li>
-          <li>
-            <PaymentRoundedIcon className="icon" />
-            <span>Orders</span>
-          </li>
-          <li>
-            <LocalShippingRoundedIcon className="icon" />
-            <span>Delivery</span>
-          </li>
-
-          <p className="title">USEFUL</p>
-          <li>
-            <InsertChartRoundedIcon className="icon" />
-            <span>Stats</span>
-          </li>
-          <li>
-            <NotificationsNoneRoundedIcon className="icon" />
-            <span>Notifications</span>
-          </li>
-
-          <p className="title">SERVICE</p>
-          <li>
-            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>System Health</span>
-          </li>
-          <li>
-            <PsychologyOutlinedIcon className="icon" />
-            <span>Logs</span>
-          </li>
-          <li>
-            <SettingsApplicationsSharpIcon className="icon" />
-            <span>Settings</span>
-          </li>
-
-          <p className="title">USER</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <li>
-            <ExitToAppRoundedIcon className="icon" />
-            <span>Logout</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
-      </div>
+const Sidebar = ({
+  handleDrawerClose,
+  handleDrawerTransitionEnd,
+  container,
+  drawerWidth,
+  mobileOpen,
+}) => {
+  const drawer = (
+    <div>
+      <Toolbar />
+      <Divider />
+      <List>
+        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {["All mail", "Trash", "Spam"].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
     </div>
+  );
+
+  return (
+    <Box
+      component="nav"
+      sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+      aria-label="mailbox folders"
+    >
+      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={mobileOpen}
+        onTransitionEnd={handleDrawerTransitionEnd}
+        onClose={handleDrawerClose}
+        ModalProps={{
+          keepMounted: true, // Better open performance on mobile.
+        }}
+        sx={{
+          display: { xs: "block", sm: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: drawerWidth,
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
+      <Drawer
+        variant="permanent"
+        sx={{
+          display: { xs: "none", sm: "block" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: drawerWidth,
+          },
+        }}
+        open
+      >
+        {drawer}
+      </Drawer>
+    </Box>
   );
 };
 
