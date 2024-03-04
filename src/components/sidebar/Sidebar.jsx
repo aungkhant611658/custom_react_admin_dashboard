@@ -30,7 +30,7 @@ const Sidebar = ({
           <div key={item.title}>
             <p className="title">{item.title}</p>
             {item.links.map((link) => (
-              <ListItem key={item.title} disablePadding>
+              <ListItem key={link.name} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>{link.icon}</ListItemIcon>
                   <ListItemText primary={link.name} />
