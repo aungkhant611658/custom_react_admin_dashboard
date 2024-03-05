@@ -241,8 +241,9 @@ const Navbar = ({
   open,
   setOpen,
   windowSize,
-  handleMobileDrawerToggle,
   theme,
+  mobileMenu,
+  setMobileMenu,
 }) => {
   const menuId = "primary-search-account-menu";
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -261,6 +262,10 @@ const Navbar = ({
 
   const handleDrawerOpen = () => {
     setOpen(true);
+  };
+
+  const handleMobileDrawerToggle = () => {
+    setMobileMenu(!mobileMenu);
   };
 
   return (
