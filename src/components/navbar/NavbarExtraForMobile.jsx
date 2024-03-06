@@ -6,6 +6,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import BedtimeRoundedIcon from "@mui/icons-material/BedtimeRounded";
+import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 
 const NavbarExtraForMobile = ({
   anchorEl,
@@ -44,7 +45,7 @@ const NavbarExtraForMobile = ({
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
     </Menu>
   );
 
@@ -104,6 +105,13 @@ const NavbarExtraForMobile = ({
           <AccountCircle />
         </IconButton>
         <p>Profile</p>
+      </MenuItem>
+
+      <MenuItem>
+        <IconButton size="large" aria-label="logout" color="inherit">
+          <ExitToAppRoundedIcon />
+        </IconButton>
+        <p>Logout</p>
       </MenuItem>
     </Menu>
   );
