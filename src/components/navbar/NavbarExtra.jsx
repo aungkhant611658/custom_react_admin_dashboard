@@ -8,6 +8,7 @@ import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import BedtimeOutlinedIcon from "@mui/icons-material/BedtimeOutlined";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -67,12 +68,18 @@ const NavbarExtra = ({
         />
       </Search>
       <Box sx={{ flexGrow: 1 }} />
+
       <Box sx={{ display: { xs: "none", md: "flex" } }}>
+        <IconButton size="large" aria-label="night mode" color="inherit">
+          <BedtimeOutlinedIcon />
+        </IconButton>
+
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
           </Badge>
         </IconButton>
+
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -82,6 +89,7 @@ const NavbarExtra = ({
             <NotificationsIcon />
           </Badge>
         </IconButton>
+
         <IconButton
           size="large"
           edge="end"
@@ -94,6 +102,7 @@ const NavbarExtra = ({
           <AccountCircle />
         </IconButton>
       </Box>
+
       <Box sx={{ display: { xs: "flex", md: "none" } }}>
         <IconButton
           size="large"

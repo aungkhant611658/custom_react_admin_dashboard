@@ -5,6 +5,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
+import BedtimeRoundedIcon from "@mui/icons-material/BedtimeRounded";
 
 const NavbarExtraForMobile = ({
   anchorEl,
@@ -64,6 +65,13 @@ const NavbarExtraForMobile = ({
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
+        <IconButton size="large" aria-label="night mode" color="inherit">
+          <BedtimeRoundedIcon />
+        </IconButton>
+        <p>Night Mode</p>
+      </MenuItem>
+
+      <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="error">
             <MailIcon />
@@ -71,6 +79,7 @@ const NavbarExtraForMobile = ({
         </IconButton>
         <p>Messages</p>
       </MenuItem>
+
       <MenuItem>
         <IconButton
           size="large"
@@ -83,6 +92,7 @@ const NavbarExtraForMobile = ({
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
