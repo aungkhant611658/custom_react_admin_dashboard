@@ -2,10 +2,10 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { BarChart } from "@mui/x-charts/BarChart";
 
-import "./FeatureChart.scss";
+import "./RevenueBarChart.scss";
 import { MoreVert } from "@mui/icons-material";
 
-const FeatureChart = () => {
+const RevenueBarChart = () => {
   const chartSetting = {
     xAxis: [
       {
@@ -102,4 +102,4 @@ const FeatureChart = () => {
   );
 };
 
-export default FeatureChart;
+export default RevenueBarChart;

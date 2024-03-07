@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Widget from "../../components/widget/Widget";
-import FeatureChart from "../../components/charts/featureChart/FeatureChart";
+import RevenueBarChart from "../../components/charts/revenue_bar_chart/RevenueBarChart";
 import NormalChart from "../../components/charts/normalChart/NormalChart";
 import Grid from "@mui/material/Grid";
 import { widgets } from "../../data/dummy";
@@ -36,7 +36,7 @@ export default function Home() {
       <Box className="charts">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={12} md={10} lg={6}>
-            <FeatureChart />
+            <RevenueBarChart />
           </Grid>
           <Grid item xs={12} sm={12} md={10} lg={6}>
             <NormalChart />
