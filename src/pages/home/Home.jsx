@@ -2,17 +2,20 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Widget from "../../components/widget/Widget";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-
-import "./Home.scss";
 import {
   AccountBalanceWalletOutlined,
   MonetizationOnOutlined,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
+import FeatureChart from "../../components/charts/featureChart/FeatureChart";
+import NormalChart from "../../components/charts/normalChart/NormalChart";
+import Grid from "@mui/material/Grid";
+
+import "./Home.scss";
 
 export default function Home() {
   return (
-    <>
+    <Box className="home">
       <Box
         sx={{
           display: "flex",
@@ -88,7 +91,16 @@ export default function Home() {
         />
       </Box>
 
-      <Box className="charts"></Box>
-    </>
+      <Box className="charts">
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={10} lg={5}>
+            <FeatureChart />
+          </Grid>
+          <Grid item xs={12} sm={12} md={10} lg={7}>
+            <NormalChart />
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
   );
 }

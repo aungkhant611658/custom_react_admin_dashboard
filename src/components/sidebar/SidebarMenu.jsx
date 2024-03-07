@@ -12,7 +12,7 @@ const SidebarMenu = ({ open }) => {
   return (
     <>
       {sidebarMenu.map((item) => (
-        <div key={item.title}>
+        <div key={item.title} className="sidebarMenu">
           <p className="title">{item.title}</p>
           {item.links.map((link) => (
             <ListItem key={link.name} disablePadding sx={{ display: "block" }}>
