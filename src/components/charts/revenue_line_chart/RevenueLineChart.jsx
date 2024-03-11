@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import { LineChart } from "@mui/x-charts/LineChart";
 import { MoreVert } from "@mui/icons-material";
 
-import "./NormalChart.scss";
+import "./RevenueLineChart.scss";
 
-const NormalChart = () => {
+const RevenueLineChart = () => {
   const pData = [2400, 1398, 9800, 3908, 4800, 3800];
   const xLabels = ["Jan", "Feb", "Mar", "Apr", "May", "June"];
   const valueFormatter = (value) => `$${value}`;
@@ -47,4 +47,4 @@ const NormalChart = () => {
   );
 };
 
-export default NormalChart;
+export default RevenueLineChart;

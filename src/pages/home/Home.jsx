@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Widget from "../../components/widget/Widget";
 import RevenueBarChart from "../../components/charts/revenue_bar_chart/RevenueBarChart";
-import NormalChart from "../../components/charts/normalChart/NormalChart";
+import RevenueLineChart from "../../components/charts/revenue_line_chart/RevenueLineChart";
 import Grid from "@mui/material/Grid";
 import { widgets } from "../../data/dummy";
 
@@ -39,7 +39,7 @@ export default function Home() {
             <RevenueBarChart />
           </Grid>
           <Grid item xs={12} sm={12} md={10} lg={7}>
-            <NormalChart />
+            <RevenueLineChart />
           </Grid>
         </Grid>
       </Box>
