@@ -29,7 +29,14 @@ const NormalChart = () => {
       <Box className="bottom" sx={{ width: "100%" }}>
         <div className="chartWrapper">
           <LineChart
-            series={[{ data: pData, label: "Total Revenue", valueFormatter }]}
+            series={[
+              {
+                data: pData,
+                area: true,
+                label: "Total Revenue",
+                valueFormatter,
+              },
+            ]}
             xAxis={[{ scaleType: "point", data: xLabels }]}
             sx={{ width: "100%" }}
             height={400}
