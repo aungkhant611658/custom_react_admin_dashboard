@@ -80,7 +80,7 @@ const RevenueBarChart = () => {
           justifyContent: "space-between",
         }}
       >
-        <h1 className="title">This Month Total Revenue</h1>
+        <h1 className="title">This Year Total Revenue</h1>
         <MoreVert fontSize="small" />
       </Box>
 

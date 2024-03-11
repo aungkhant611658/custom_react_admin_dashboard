@@ -1,12 +1,12 @@
 import * as React from "react";
+import "./Home.scss";
 import Box from "@mui/material/Box";
 import Widget from "../../components/widget/Widget";
 import RevenueBarChart from "../../components/charts/revenue_bar_chart/RevenueBarChart";
 import RevenueLineChart from "../../components/charts/revenue_line_chart/RevenueLineChart";
 import Grid from "@mui/material/Grid";
 import { widgets } from "../../data/dummy";
-
-import "./Home.scss";
+import LatestTransactionTable from "../../components/tables/latest_transactions/LatestTransactionTable";
 
 export default function Home() {
   return (
@@ -43,6 +43,11 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
+
+      <div className="custom-table">
+        <h2>Latest Transactions</h2>
+        <LatestTransactionTable />
+      </div>
     </Box>
   );
 }
