@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import { Avatar } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 
 import "./LatestTransactionTable.scss";
 import { latestTransactionData } from "../../../data/dummy";
@@ -25,7 +25,7 @@ const LatestTransactionTable = () => {
       label: "Profile",
       options: {
         customBodyRender: (val) => {
-          return <Avatar variant="rounded" src={val}></Avatar>;
+          return <Avatar variant="circular" src={val}></Avatar>;
         },
       },
     },
@@ -52,6 +52,11 @@ const LatestTransactionTable = () => {
     {
       name: "status",
       label: "Status",
+      options: {
+        customBodyRender: (val) => {
+          return <span className={`status ${val}`}>{val}</span>;
+        },
+      },
     },
   ];
 

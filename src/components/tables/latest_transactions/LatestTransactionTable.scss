@@ -15,4 +15,22 @@
       }
     }
   }
+
+  tbody {
+    .status {
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 13px;
+
+      &.Approved {
+        color: white;
+        background-color: rgba(0, 185, 0, 0.751);
+      }
+
+      &.Pending {
+        color: white;
+        background-color: rgba(189, 3, 3, 0.67);
+      }
+    }
+  }
 }
