@@ -6,6 +6,7 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
 import "./LatestTransactionTable.scss";
+import { latestTransactionData } from "../../../data/dummy";
 
 const muiCache = createCache({
   key: "mui-datatables",
@@ -13,7 +14,36 @@ const muiCache = createCache({
 });
 
 const LatestTransactionTable = () => {
-  const columns = ["ID", "Name", "Title", "Location"];
+  const columns = [
+    {
+      name: "id",
+      label: "ID",
+    },
+    {
+      name: "product",
+      label: "Product",
+    },
+    {
+      name: "customer",
+      label: "Customer",
+    },
+    {
+      name: "date",
+      label: "Date",
+    },
+    {
+      name: "amount",
+      label: "Amount",
+    },
+    {
+      name: "method",
+      label: "Method",
+    },
+    {
+      name: "status",
+      label: "Status",
+    },
+  ];
 
   const options = {
     responsive: "vertical",
@@ -31,32 +61,12 @@ const LatestTransactionTable = () => {
     // },
   };
 
-  const data = [
-    [1, "Gabby George", "Business Analyst", "Minneapolis"],
-    [
-      2,
-      "Aiden Lloyd",
-      "Business Consultant for an International Company and CEO of Tony's Burger Palace",
-      "Dallas",
-    ],
-    [3, "Jaden Collins", "Attorney", "Santa Ana"],
-    [4, "Franky Rees", "Business Analyst", "St. Petersburg"],
-    [5, "Aaren Rose", null, "Toledo"],
-    [6, "Johnny Jones", "Business Analyst", "St. Petersburg"],
-    [7, "Jimmy Johns", "Business Analyst", "Baltimore"],
-    [8, "Jack Jackson", "Business Analyst", "El Paso"],
-    [9, "Joe Jones", "Computer Programmer", "El Paso"],
-    [10, "Jacky Jackson", "Business Consultant", "Baltimore"],
-    [11, "Jo Jo", "Software Developer", "Washington DC"],
-    [12, "Donna Marie", "Business Manager", "Annapolis"],
-  ];
-
   return (
     <CacheProvider value={muiCache}>
       <ThemeProvider theme={createTheme()}>
         <MUIDataTable
           // title={"ACME Employee list"}
-          data={data}
+          data={latestTransactionData}
           columns={columns}
           options={options}
           className="latest-transaction"
