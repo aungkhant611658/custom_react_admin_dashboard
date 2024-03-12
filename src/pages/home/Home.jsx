@@ -44,8 +44,8 @@ export default function Home() {
         </Grid>
       </Box>
 
-      <div className="custom-table">
-        <h2>Latest Transactions</h2>
+      <div className="listContainer">
+        <div className="listTitle">Latest Transactions</div>
         <LatestTransactionTable />
       </div>
     </Box>
