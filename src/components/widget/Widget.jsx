@@ -43,15 +43,15 @@ const Widget = ({ type, icon, link, isMoney, amount, percentage }) => {
       >
         <Box
           className={`percentage ${
-            Math.sign(percentage) == 1 ? "positive" : "negative"
+            Math.sign(percentage) === 1 ? "positive" : "negative"
           }`}
           sx={{
             display: "flex",
             alignItems: "center",
           }}
         >
-          {Math.sign(percentage) == 1 && <KeyboardArrowUpIcon />}
-          {Math.sign(percentage) == -1 && <KeyboardArrowDown />}
+          {Math.sign(percentage) === 1 && <KeyboardArrowUpIcon />}
+          {Math.sign(percentage) === -1 && <KeyboardArrowDown />}
           {percentage}%
         </Box>
         {icon}
