@@ -1,4 +1,5 @@
 import React from "react";
+import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import FullFunctionDatatable from "../../components/datatables/FullFunctionDatatable";
 import IconButton from "@mui/material/IconButton";
@@ -6,8 +7,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditRoundedIcon from "@mui/icons-material/ModeEditRounded";
 import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 import { red } from "@mui/material/colors";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Grid from "@mui/material/Grid";
 
 import { latestTransactionData } from "../../data/dummy";
+import "./List.scss";
+import ButtonWithIcon from "../../components/buttons/ButtonWithIcon";
 
 const List = () => {
   const columns = [
@@ -80,11 +85,18 @@ const List = () => {
   ];
 
   return (
-    <FullFunctionDatatable
-      tableTitle="Users"
-      columns={columns}
-      transactions={latestTransactionData}
-    />
+    <Box className="list">
+      <Grid container spacing={2} justifyContent="flex-end">
+        <Grid item>
+          <ButtonWithIcon />
+        </Grid>
+      </Grid>
+      <FullFunctionDatatable
+        tableTitle="Users"
+        columns={columns}
+        transactions={latestTransactionData}
+      />
+    </Box>
   );
 };
 
